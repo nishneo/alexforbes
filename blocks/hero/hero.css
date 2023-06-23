@@ -1,0 +1,77 @@
+/* block specific CSS goes here */
+
+main .hero-wrapper {
+    overflow-x: clip;
+}
+
+main .hero-container > div {
+    max-width: unset;
+}
+
+main .hero-container {
+    padding: 0;
+}
+
+main .hero {
+    position: relative;
+    padding: 2rem;
+}
+
+main .hero h1,
+main .hero h2 {
+    font-weight: normal;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+main .hero h1 {
+    margin-top: 240px;
+    font-size: 28px;
+}
+
+main .hero h2 {
+    font-size: 22px;
+}
+
+main .hero picture {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+main .hero img {
+    object-fit: cover;
+    width: auto;
+    height: 80vh;
+    max-height: 800px;
+}
+
+@media (min-width:900px) {
+    main .hero {
+        width: 100vw;
+        padding: 2rem 0;
+    }
+
+    main .hero h1 {
+        font-size: 48px;
+    }
+
+    main .hero img {
+        object-fit: cover;
+        width: 100%;
+        height: unset;
+    }
+}
+
+@media (min-width:1100px) {
+    main .hero h1,
+    main .hero h2 {
+        max-width: 960px;
+    }
+}

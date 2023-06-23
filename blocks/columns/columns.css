@@ -1,0 +1,71 @@
+.columns > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns img {
+    width: 350px;
+    border-radius: 50%;
+}
+
+@media (min-width: 900px) {
+    .columns > div {
+        display: flex;
+        align-items: top;
+        flex-direction: unset;
+    }
+
+    .columns > div > div {
+        flex: 1;
+        margin-left: 32px;
+    }
+
+    .columns > div > div:first-of-type {
+        margin-left: unset;
+    }
+}
+
+.widetext div {
+    padding-bottom: 10px;
+}
+
+.widetext div div:nth-child(1) {
+    flex: 5%;
+}
+
+.widetext div div:nth-child(2) {
+    flex: 95%;
+}
+
+.widetext span.icon,
+.mid-icon .icon {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border: 2px solid #124e57;
+    color: #124e57;
+    border-radius: 50px;
+    background: #fff;
+    text-align: center;
+    line-height: 0.8;
+    margin: unset;
+}
+
+.no-round-image img {
+    border-radius: unset;
+}
+
+.mid-icon div div:nth-child(1) {
+    flex: 45%;
+}
+
+.mid-icon div div:nth-child(2) {
+    flex: 5%;
+}
+
+.mid-icon div div:nth-child(3) {
+    flex: 50%;
+}

@@ -1,0 +1,308 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+ :root {
+  /* colors */
+  --link-color: rgba(241 90 34 / 90%);
+  --link-hover-color: #124e57;
+  --button-color: #F37344;
+  --background-color: #fff;
+  --overlay-background-color: #eee;
+  --highlight-background-color: #ccc;
+  --text-color: #656262;
+
+  /* fonts */
+  --heading-font-family: var(--body-font-family);
+  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --bs-font-sans-serif: "Hero New", sans-serif;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-font-monospace: sfmono-regular,menlo,monaco,consolas,"Liberation Mono","Courier New",monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255 255 255 / 15%), rgba(255 255 255 / 0%));
+  --body-font-family: var(--bs-font-sans-serif);
+  --cards-font-size: 20px;
+  --cards-font-weight: 700;
+  --cards-font-color: var(--link-hover-color);
+
+  /* body sizes */
+  --body-font-size-m: 1rem;
+  --body-font-size-s: 0.75rem;
+
+  /* heading sizes */
+  --heading-font-size-xxxl: 32px;
+  --heading-font-size-xxl: 26px;
+  --heading-font-size-xl: 22px;
+  --heading-font-size-l: 16px;
+  --heading-font-size-m: 14px;
+  --heading-font-size-s: 12px;
+
+  /* nav */
+  --nav-height: 80px;
+  --nav-background-color: rgb(18 78 87);
+  --nav-color: #fff;
+  --nav-active-color: #f37344;
+
+  /* topbar */
+  --topbar-height: 20px;
+  --topbar-background-color: rgb(18 78 87);
+  --topbar-color: #fff;
+  --topbar-active-color: #f37344;
+  --topbar-border-color: #15808D;
+
+  /* footer */
+  --footer-color: #fff;
+  --footer-background-color: rgb(1 3 6);
+}
+
+body {
+  font-size: var(--body-font-size-m);
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: none;
+}
+
+body.appear {
+  display: unset;
+}
+
+header {
+  height: calc(var(--nav-height) + var(--topbar-height) + 1 em);
+  background-color: var(--nav-background-color);
+  position: fixed;
+  width: 100vw;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  scroll-margin: calc(var(--nav-height) + var(--topbar-height) + 1em);
+}
+
+h1 { font-size: var(--heading-font-size-xxl) }
+h2 { font-size: var(--heading-font-size-xl) }
+h3 { font-size: var(--heading-font-size-l) }
+h4 { font-size: var(--heading-font-size-m) }
+h5 { font-size: var(--heading-font-size-s) }
+h6 { font-size: var(--heading-font-size-xs) }
+
+.default-content-wrapper h1,
+.default-content-wrapper h2,
+.default-content-wrapper h3,
+.default-content-wrapper h4,
+.default-content-wrapper h5,
+.default-content-wrapper h6 {
+  text-align: center;
+}
+
+h1 > span.icon,
+h2 > span.icon,
+h3 > span.icon,
+h4 > span.icon,
+h5 > span.icon,
+h6 > span.icon {
+  display: inline;
+  margin-right: 10px;
+}
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+code, pre, samp {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+code, samp {
+  padding: .125em;
+}
+
+pre {
+  overflow: scroll;
+}
+
+/* buttons */
+
+a.button:any-link, button {
+  font-family: var(--font-family-body);
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 5px 30px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--background-color);
+  background-color: var(--link-color);
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 30px;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus  {
+  background-color: var(--link-hover-color);
+  background-color: var(--button-color);
+  cursor: pointer;
+}
+
+.modal a.button:any-link {
+  transition: 0.5s;
+  color: var(--button-color);
+  background: transparent;
+  border: 2px solid var(--button-color);
+}
+
+.modal a.button:hover {
+  background-color: var(--button-color);
+  color: var(--background-color);
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration-style: solid;
+}
+
+button:disabled, button:disabled:hover {
+  background-color: var(--overlay-background-color);
+  cursor: unset;
+}
+
+a.button.secondary, button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--text-color)
+}
+
+
+main input {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 50rem;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.6rem;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+main input:hover {
+  border: 1px solid var(--text-color);
+}
+
+main .section {
+  padding: 32px;
+}
+
+main .section.grey {
+  background-color: var(--overlay-background-color);
+}
+
+main pre {
+  background-color: var(--overlay-background-color);
+  padding: 1em;
+  border-radius: .25em;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+main blockquote {
+  font-style: italic;
+  margin: 3rem;
+  text-indent: -1rem;
+  hanging-punctuation: first;
+}
+
+main blockquote p::before {
+  content: "“";
+  line-height: 0;
+}
+
+main blockquote p::after {
+  content: "”";
+  line-height: 0;
+}
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid var(--overlay-background-color);
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --heading-font-size-xxl: 40px;
+    --heading-font-size-xl: 32px;
+    --heading-font-size-l: 24px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 16px;
+    --heading-font-size-xs: 14px;
+  }
+
+  .section > div {
+    max-width: 960px;
+    margin: auto;
+  }
+}
+
+/* progressive section appearance */
+main .section[data-section-status='loading'],
+main .section[data-section-status='initialized'] {
+  display: none;
+}
+
+main .section.highlight {
+  background-color: var(--highlight-background-color);
+}
+
+main .section-title h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    font-family: "Hero New", sans-serif;
+    color: #635551;
+    text-align: center;
+}
+
+/* Anchors */
+#importantdecisions, #financialfuture, #faq, #memberbooklet, #finance {
+  scroll-margin-top: calc(var(--nav-height) + var(--topbar-height) + 1em);
+}
