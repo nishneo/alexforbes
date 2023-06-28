@@ -19,6 +19,13 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #656262;
+  --color-orange: #f69521;
+  --color-dark-green: #124e57;
+  --color-body--large: #635551;
+  --color-body: #313030;
+  --color-dark-black: #010306;
+  --color-orange-dark: #f07f09;
+  --color-orange-darker: #ff774a;
 
   /* fonts */
   --heading-font-family: var(--body-font-family);
@@ -32,6 +39,16 @@
   --cards-font-size: 20px;
   --cards-font-weight: 700;
   --cards-font-color: var(--link-hover-color);
+
+  /* body font from designs */
+  /* --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
+  /* --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; */
+  /* --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); */
+  /* --bs-body-font-family: var(--bs-font-sans-serif); */
+  /* --bs-body-font-size: 1rem; */
+  /* --bs-body-font-weight: 400; */
+  /* --bs-body-line-height: 1.5; */
+  /* --bs-body-color: #212529; */
 
   /* body sizes */
   --body-font-size-m: 1rem;
@@ -61,6 +78,9 @@
   /* footer */
   --footer-color: #fff;
   --footer-background-color: rgb(1 3 6);
+
+  /* box-shadow */
+  --box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
 }
 
 body {
