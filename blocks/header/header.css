@@ -19,10 +19,6 @@ header nav {
   font-family: var(--body-font-family);
 }
 
-header .topbar a {
-  color: unset;
-}
-
 header nav a:any-link {
   color: currentcolor;
 }
@@ -132,18 +128,6 @@ header nav .nav-sections {
   flex: 1 1 auto;
 }
 
-header .topbar ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: unset;
-  width: unset;
-  margin: 0;
-  font-size: 14px;
-  list-style: none;
-  padding-left: 0;
-}
-
 header nav .nav-sections ul  {
   font-size: 16px;
   font-weight: 500;
@@ -181,38 +165,9 @@ header nav[aria-expanded='true'] .nav-tools ul {
   flex-direction: column;
 }
 
-header .topbar ul li {
-  padding: 10px;
-}
-
 header nav[aria-expanded='true'] .nav-tools li {
   padding: 0;
 }
-
-header .topbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: var(--topbar-height);
-  padding: 8px 2rem;
-  color: var(--topbar-color);
-  border-bottom: 1px solid var(--topbar-border-color);
-}
-
-header .topbar .icon {
-  font-size: unset;
-  display: unset;
-  padding: 8px 5px;
-}
-
-
-@media (max-width: 540px) {
-  header .topbar ul li {
-    font-size: 8px;
-    padding: unset;
-  }
-}
-
 
 /* desktop nav styles */
 @media (min-width: 1100px) {

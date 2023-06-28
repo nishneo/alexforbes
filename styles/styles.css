@@ -19,6 +19,13 @@
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #656262;
+  --color-orange: #f69521;
+  --color-dark-green: #124e57;
+  --color-body-large: #635551;
+  --color-body: #313030;
+  --color-dark-black: #010306;
+  --color-orange-dark: #f07f09;
+  --color-orange-darker: #ff774a;
 
   /* fonts */
   --heading-font-family: var(--body-font-family);
@@ -61,6 +68,9 @@
   /* footer */
   --footer-color: #fff;
   --footer-background-color: rgb(1 3 6);
+
+  /* box-shadow */
+  --box-shadow: 0 0 30px #d6d7d899;
 }
 
 body {
