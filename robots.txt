@@ -1,8 +1,2 @@
-user-agent: *
-allow: /
-
-disallow: /common/
-disallow: /tools/
-disallow: /drafts/
-
-sitemap: https://health.alexforbes.com/sitemap-index.xml
+User-agent: *
+Disallow: /
