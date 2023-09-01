@@ -27,10 +27,12 @@ const gtmId = 'GTM-5J2M29FF';
 
 // google analytics
 const gaId = 'G-5KKX1F3GQT';
+/*
 loadScript(`https://www.googletagmanager.com/gtag/js?id=${gaId}`, 'async', () => {
   // eslint-disable-next-line
   window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', gaId);
 });
+*/
 
 // Back-to-top button
 function loadBackToTop() {
