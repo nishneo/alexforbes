@@ -28,19 +28,6 @@ span.icon {
 }
 
 /* boxicons */
-
-span.icon-file::before {
-  content: "\ed38";
-}
-
-span.icon-tachometer::before {
-  content: "\ee9d";
-}
-
-span.icon-layer::before {
-  content: "\ed91";
-}
-
 span.icon-linkedin::before {
   content: "\e944";
 }
@@ -76,16 +63,6 @@ span.icon-person-video2::before {
   content: "\f678";
 }
 
-span.icon-person-video3::before {
-  font-family: bootstrap-icons;
-  content: "\f679";
-}
-
-span.icon-file-earmark-pdf::before {
-  font-family: bootstrap-icons;
-  content: "\f63e";
-}
-
 span.icon-safe::before {
   font-family: bootstrap-icons;
   content: "\f65a";
@@ -97,23 +74,23 @@ span.icon-exclamation::before {
 }
 
 span.icon-bi-graph-up-arrow::before {
-    font-family: bootstrap-icons;
-    content: "\F673";
+  font-family: bootstrap-icons;
+  content: "\F673";
 }
 
 span.icon-bi-calendar-date::before {
-    font-family: bootstrap-icons;
-    content: "\F1E4";
+  font-family: bootstrap-icons;
+  content: "\F1E4";
 }
 
 span.icon-bi-geo-alt::before {
-    font-family: bootstrap-icons;
-    content: "\F3E8";
+  font-family: bootstrap-icons;
+  content: "\F3E8";
 }
 
 span.icon-bi-cash-stack::before {
-    font-family: bootstrap-icons;
-    content: "\F246";
+  font-family: bootstrap-icons;
+  content: "\F246";
 }
 
 span.icon-life-preserver::before {
@@ -136,6 +113,16 @@ span.icon-door-open::before {
   content: "\F308";
 }
 
+span.icon-chevron-down::before {
+  font-family: bootstrap-icons;
+  content: "\F282";
+}
+
+.cards.image.wide p.button-container > a::before {
+  font-family: bootstrap-icons;
+  content: "\f138  ";
+}
+
 .retirement-picture ul li::marker {
   font-family: bootstrap-icons;
   content: "\F234";
@@ -143,4 +130,50 @@ span.icon-door-open::before {
 
 .retirement-picture ul li {
   padding-left: 5px;
+}
+
+/* Back to top button */
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: var(--color-tangerine);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.back-to-top:focus {
+  text-decoration: none;
+}
+
+.back-to-top .bi-arrow-up-short {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+.back-to-top .bi-arrow-up-short::before {
+  font-family: bootstrap-icons;
+  content: "\F145";
+  font-style: normal;
+}
+
+.back-to-top:hover {
+  background: var(--color-orange);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
 }

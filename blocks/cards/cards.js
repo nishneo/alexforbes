@@ -24,6 +24,22 @@ export default function decorate(block) {
     }
     ul.append(li);
   });
+  if (block.parentElement.classList.contains('highlight')) {
+    const cardsContainer = document.createElement('ul');
+    const li = document.createElement('li');
+    [...ul.children].forEach((el, i) => {
+      if (i !== 0) cardsContainer.append(el);
+    });
+    li.classList.add('cards-card-appear');
+    [...cardsContainer.children].forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('cards-card-appear');
+      }, (i + 1) * 100);
+    });
+
+    li.append(cardsContainer);
+    ul.append(li);
+  }
   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.textContent = '';
   block.append(ul);

@@ -9,12 +9,12 @@
 
 .modal {
   font-size: 90%;
-  z-index: 20;
+  z-index: 99;
   display: none;
   position: fixed;
   background-color: var(--background-color);
   box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
-  top: 0;
+  top: var(--nav-height);
   width: 90vw;
   max-height: 100vh;
   margin: 0;

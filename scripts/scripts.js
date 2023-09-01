@@ -609,7 +609,7 @@ function loadFooter(footer) {
   loadBlock(footerBlock);
 }
 
-function decorateExternalLinks(main) {
+export function decorateExternalLinks(main) {
   main.querySelectorAll('a').forEach((a) => {
     const href = a.getAttribute('href');
     if (!href.startsWith('/')
@@ -673,6 +673,9 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  setTimeout(() => {
+    decorateIcons(main);
+  }, 3000);
 }
 
 /**
@@ -696,6 +699,7 @@ export async function loadFragment(path) {
  * loads everything needed to get to LCP.
  */
 async function loadEager(doc) {
+  document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
@@ -757,4 +761,67 @@ export function getHref() {
   const { location: parentLocation } = window.parent;
   const urlParams = new URLSearchParams(parentLocation.search);
   return `${parentLocation.origin}${urlParams.get('path')}`;
+}
+
+//  function to wrap images in links so that authors
+// can put a link directly below the image.
+
+export function wrapImgsInLinks(container) {
+  const pictures = container.querySelectorAll('picture');
+  pictures.forEach((pic) => {
+    const link = pic.nextElementSibling;
+    if (link && link.tagName === 'A' && link.href) {
+      link.innerHTML = pic.outerHTML;
+      pic.replaceWith(link);
+    }
+  });
+}
+
+export function getMetaData() {
+  const metaTags = document.querySelectorAll('meta');
+  const metaTagValues = {};
+
+  metaTags.forEach((metaTag) => {
+    const name = metaTag.getAttribute('name');
+    const content = metaTag.getAttribute('content');
+    if (name && content) {
+      metaTagValues[name] = content;
+    }
+  });
+
+  return metaTagValues;
+}
+
+export function getFirstItemOfPath(path) {
+  // Remove the leading and trailing slashes (if present) and then split by '/'
+  const pathItems = path.replace(/^\/|\/$/g, '').split('/');
+
+  // Return the first non-empty item
+  return pathItems.find((item) => item.trim() !== '') || '';
+}
+
+export function isSidekick() {
+  const url = new URL(window.location.href);
+  return url.pathname === 'srcdoc';
+}
+
+export function clearSessionData() {
+  // remove all session data
+  sessionStorage.clear();
+}
+
+/*
+ * Take the file name from URL and replace non-supported
+ * characters with a hyphen. Trim when found at the end of file name.
+ */
+export function convertFileNameToSupportedCharacters(fileName) {
+  const lowercaseFileName = fileName.toLowerCase();
+  const fileNameWithoutExtension = lowercaseFileName.replace(/\.[^.]*$/, '');
+  const extension = lowercaseFileName.replace(/^.*\./, '');
+
+  let convertedFileName = fileNameWithoutExtension.replace(/[^a-z0-9-]+$/gi, ''); // Remove matching characters at the end
+  convertedFileName = convertedFileName.replace(/[^a-z0-9-]+/gi, '-'); // Replace remaining special characters and consecutive spaces with a single hyphen
+  convertedFileName = convertedFileName.replace(/-+/g, '-'); // Replace multiple hyphens with a single hyphen
+
+  return `${convertedFileName}.${extension}`;
 }

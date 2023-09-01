@@ -19,11 +19,16 @@ main .embed {
   text-align: center;
 }
 
-main .embed+* {
+main .embed > div {
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+main .embed + * {
   margin-top: 64px;
 }
 
-main .embed+p.legend {
+main .embed + p.legend {
   margin-top: 16px;
 }
 
@@ -39,6 +44,15 @@ main .embed.embed-twitter {
   max-height: unset;
 }
 
-main .embed-soundcloud>iframe {
-  height: 200px ! important;
+main .embed-soundcloud > iframe {
+  height: 200px !important;
+}
+
+main .embed.brokertools {
+  max-width: none;
+}
+
+main .embed.brokertools > div {
+  padding-bottom: 0;
+  height: 60vh;
 }

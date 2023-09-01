@@ -30,9 +30,9 @@ function getServer(url) {
 }
 
 function getDefaultEmbed(url) {
-  return `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+  return `<div style="width: 100%; position: relative;">
     <iframe src="${url.href}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen=""
-      scrolling="no" allow="encrypted-media" title="Content from ${url.hostname}" loading="lazy">
+      allow="encrypted-media" title="Content from ${url.hostname}" loading="lazy">
     </iframe>
   </div>`;
 }
@@ -85,6 +85,14 @@ function embedTwitter(url) {
   return embedHTML;
 }
 
+function embedBrokerTools(url) {
+  return `<div style="width: 100%; position: relative;">
+    <iframe src="${url.href}" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen=""
+      allow="encrypted-media" title="Content from ${url.hostname}" loading="lazy">
+    </iframe>
+  </div>`;
+}
+
 const EMBEDS_CONFIG = {
   'www.youtube.com': {
     type: 'youtube',
@@ -114,6 +122,10 @@ const EMBEDS_CONFIG = {
     type: 'twitter',
     embed: embedTwitter,
   },
+  'af.brokertools.co.za': {
+    type: 'broker-tools',
+    embed: embedBrokerTools,
+  },
 };
 
 function decorateBlockEmbed($block, url) {
@@ -121,10 +133,10 @@ function decorateBlockEmbed($block, url) {
   if (config) {
     const html = config.embed(url);
     $block.innerHTML = html;
-    $block.classList = `block embed embed-${config.type}`;
+    $block.classList.add(`embed-${config.type}`);
   } else {
     $block.innerHTML = getDefaultEmbed(url);
-    $block.classList = `block embed embed-${getServer(url)}`;
+    $block.classList.add(`embed-${getServer(url)}`);
   }
 }
 

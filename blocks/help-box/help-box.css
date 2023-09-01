@@ -1,35 +1,60 @@
 .help-box {
   position: relative;
   background-color: var(--background-color);
-  box-shadow: 0 0 30px rgb(214 215 216 / 60%);
-  padding: 0 20px;
-  font-size: 14px;
+  box-shadow: var(--box-shadow);
+  padding: 1em 2em;
+  font-size: var(--body-font-size-s);
 }
 
 .help-box h3 {
   font-size: var(--heading-font-size-s);
+  color: var(--color-granite-gray);
 }
 
-.help-box > div {
-  padding: 20px 0;
+.help-box > div a {
+  font-weight: bold;
+}
+
+.help-box > div a:hover {
+  text-decoration: underline;
 }
 
 .help-box > div:first-child img {
-  width: 64px;
+  width: 44px;
+  min-width: 28px;
 }
 
 .help-box > div:first-child {
   border-bottom: solid 1px #ccc;
 }
 
+.help-box > div:last-child {
+  margin: 1em 0;
+}
 
-@media (min-width:900px) {
+.help-box > div:first-child > div > p:last-child > br {
+  display: none;
+}
+
+.help-box > div:first-child > div > p:last-child > a {
+  word-wrap: break-word;
+}
+
+@media (min-width: 576px) {
   .help-box {
-    padding-left: 100px;
+    font-size: var(--body-font-size-m);
+  }
+}
+
+@media (min-width: 768px) {
+  .help-box {
+    padding-left: 110px;
+    font-size: var(--body-font-size-m);
   }
 
   .help-box > div:first-child img {
     position: absolute;
+    width: 64px;
     left: 20px;
   }
 }

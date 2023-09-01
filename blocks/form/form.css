@@ -64,25 +64,25 @@ main .form .form-checkbox-wrapper {
   margin: var(--spacing-s) 0;
 }
 
-main .form .form-checkbox-wrapper input[type='checkbox'] {
+main .form .form-checkbox-wrapper input[type="checkbox"] {
   display: none;
 }
 
-main .form .form-checkbox-wrapper input[type='checkbox'] + label::before {
+main .form .form-checkbox-wrapper input[type="checkbox"] + label::before {
   float: left;
   margin-top: 5px;
   margin-right: 5px;
   height: 30px;
   width: 30px;
-  content: ' ';
-  background: url('./checkbox.svg');
+  content: " ";
+  background: url("./checkbox.svg");
   background-size: contain;
 }
 
-main .form .form-checkbox-wrapper input[type='checkbox']:checked +label::before {
-  background: url('./checkbox-checked.svg');
+main .form .form-checkbox-wrapper input[type="checkbox"]:checked + label::before {
+  background: url("./checkbox-checked.svg");
   background-size: contain;
-  content: ' ';
+  content: " ";
 }
 
 main .form .form-checkbox-wrapper label {
@@ -101,7 +101,7 @@ main .form .button {
   font-weight: 300;
   padding: 6px 16px;
   border: none;
-  font-family: adobe-clean, 'Trebuchet MS', sans-serif;
+  font-family: adobe-clean, "Trebuchet MS", sans-serif;
 }
 
 main .form .form-submit-wrapper {
